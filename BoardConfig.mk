@@ -46,5 +46,13 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/GT9110P/gt9110p/gesture"
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
+# Halium
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_KERNEL_CMDLINE += console=tty0
+BOARD_ROOT_EXTRA_FOLDERS := \
+ /firmware \
+ /dsp \
+ /persist
+
 # Inherit from the proprietary version
 -include vendor/lenovo/TBX304/BoardConfigVendor.mk
